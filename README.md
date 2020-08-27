@@ -47,7 +47,7 @@ The email address used to agree to Let's Encrypt's TOS and subscribe to cert-rel
 
 A list of domains (and other data) for which certs should be generated. You can add an `email` key to any list item to override the `certbot_admin_email`.
 
-    certbot_create_command: "{{ certbot_script }} certonly --standalone --noninteractive --agree-tos --email {{ cert_item.email | default(certbot_admin_email) }} -d {{ cert_item.domains | join(',') }}"
+    certbot_create_command: "certbot certonly --standalone --noninteractive --agree-tos --email {{ cert_item.email | default(certbot_admin_email) }} -d {{ cert_item.domains | join(',') }}"
 
 The `certbot_create_command` defines the command used to generate the cert.
 
