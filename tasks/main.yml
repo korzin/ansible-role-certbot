@@ -1,7 +1,7 @@
 ---
 - import_tasks: include-vars.yml
 
-- import_tasks: install-with-package.yml
+- import_tasks: install-certbot.yml
   when: not certbot_install_from_source
 
 - include_tasks: create-cert-standalone.yml
