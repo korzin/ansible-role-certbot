@@ -7,16 +7,16 @@ certbot_auto_renew_minute: "30"
 certbot_auto_renew_options: "--quiet --no-self-upgrade"
 
 # Parameters used when creating new Certbot certs.
-certbot_create_if_missing: false
+certbot_create_if_missing: true
 certbot_create_method: standalone
-certbot_admin_email: email@example.com
+certbot_admin_email: samkorzin@gmail.com
 certbot_certs: []
 # - email: janedoe@example.com
 #   domains:
 #     - example1.com
 #     - example2.com
-# - domains:
-#     - example3.com
+ - domains:
+     - ec2-18-234-107-148.compute-1.amazonaws.com # TODO make dynamic
 certbot_create_command: >-
   certbot certonly --standalone --noninteractive --agree-tos
   --email {{ cert_item.email | default(certbot_admin_email) }}
