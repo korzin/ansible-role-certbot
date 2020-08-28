@@ -92,7 +92,7 @@
     certbot_create_standalone_stop_services: []
     certbot_certs:
       - domains:
-          - certbot-test.servercheck.in
+          - certbot-test.servercheck.in # TODO make it dynamic!
     nginx_vhosts:
       - listen: "443 ssl http2"
         server_name: "certbot-test.servercheck.in"
